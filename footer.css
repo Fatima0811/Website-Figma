@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+     background-color: black;
+   
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;      /* horizontally center */
+    align-items: center;          /* vertically center */
+}
+
+/* Footer Section Styles */
+footer {
+    background-color: rgba(47, 24, 147, 1);
+    width: 100%;
+    color: white;
+    padding: 30px 0;
+}
+
+footer .content {
+    max-width: 1350px;
+    margin: auto;
+    padding: 0 40px;
+}
+
+/* TOP ROW: Startup 3, Policy, Terms, Icons */
+.footer-text { /* Re-using your original class name for the top row container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25px; /* Space above the middle line */
+}
+
+/* Left side of the top row */
+.text { /* Startup 3 */
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: -0.29px;
+    /* This will style the first <p class="text"> in footer-text */
+}
+
+/* Right side of the top row (Links and Icons) */
+.right-align-top {
+    display: flex;
+    align-items: center;
+    /* We will use direct children styling here to target the p tags and the media-icons div */
+}
+
+.footer-text > .text1 { /* Privacy Policy and Terms */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0px;
+    margin-right: 50px; /* Space between links and icons, and between Policy/Terms if they were separate elements */
+}
+
+/* To group Privacy Policy, Terms, and Icons */
+/* Since you want to keep your original HTML, we'll try to adjust alignment within the .footer-text div */
+.media-icons {
+    display: flex;
+    align-items: center;
+    /* Adjusting the spacing for the text elements before media-icons */
+    /* This will be handled in HTML by wrapping P tags */
+}
+
+.media-icons img {
+
+    margin-left: 50px; /* Space between icons */
+}
+
+
+/* Middle Divider Line */
+.footer-divider {
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    margin-bottom: 30px; /* Space below the line */
+}
+
+/* BOTTOM ROW: Menu Links and Copyright */
+.footer-menu { /* Re-using your original class name for the bottom row container */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically align items */
+}
+
+.menu-links-group {
+    display: flex;
+    gap: 40px; /* Space between menu items */
+}
+
+.text3, .text4 { /* Tour, Features, Contacts, Copyright */
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0px;
+    color: white;
+    /* Removing text-align: right; from text4 and relying on flexbox */
+}
+
+.text1-move-right {
+    margin-left: 30px; /* Adjust this value (e.g., 5px, 15px) to control how far right it moves */
+}
+/* ========= MEDIA QUERIES (Responsive Footer) ========= */
+
+/* Tablets / medium screens */
+@media only screen and (max-width: 1024px) {
+    .footer-text {
+        flex-direction: column; /* Top row vertical stack */
+        align-items: center;
+        gap: 15px;
+        padding-bottom: 20px;
+    }
+
+    .footer-text > .text1 {
+        margin-right: 0; /* Links spacing remove */
+    }
+
+    .media-icons {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .media-icons img {
+        margin-left: 20px; /* Icons spacing reduce */
+    }
+
+    .footer-menu {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .menu-links-group {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .text3, .text4 {
+        font-size: 14px; /* Thoda chhota font mobile par */
+    }
+
+    .text1-move-right {
+        margin-left: 0;
+    }
+}
+
+/* Mobile / small screens */
+@media only screen and (max-width: 600px) {
+    .footer-text {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding-bottom: 15px;
+    }
+
+    .footer-text > .text, 
+    .footer-text > .text1 {
+        font-size: 14px;
+    }
+
+    .media-icons img {
+        margin-left: 15px; /* Icons spacing mobile par reduce */
+        width: 24px;
+        height: 24px;
+    }
+
+    .footer-divider {
+        margin-bottom: 20px;
+    }
+
+    .footer-menu {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .menu-links-group {
+        gap: 15px;
+    }
+
+    .text3, .text4 {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

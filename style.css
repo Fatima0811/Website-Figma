@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+      background-color: black;
+}
+header {
+    width: 100%;
+    height: 100vh;
+
+    /* DARK gradient like your 2nd image */
+    background-image: linear-gradient(rgba(25, 7, 70, 0.8), rgba(47, 18, 145, 0.6)),
+                      url('Image.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* TOP NAVIGATION */
+nav {
+    width: 100%;
+    height: 100px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+
+/* MAIN TEXT CENTERED PERFECTLY */
+.h-txt {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 55%;        /* text thora upar kiya */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.h-txt .brand {
+    font-size: 2.5em;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.h-txt h1 {
+    font-size: 5em;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.h-txt p {
+    font-size: 1.2em;        /* Thoda kam kar diya - 3 lines mein ayega */
+    max-width: 600px;        /* Width kam ki taaki exactly 3 lines mein wrap ho */
+    margin: 0 auto 35px auto;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+
+/* BUTTON STYLE */
+.h-txt a {
+    text-decoration: none;
+    background-color: #4f2ed1;
+    color: white;
+    padding: 18px 45px;
+    border-radius: 35px;
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 4px 18px rgba(79, 46, 209, 0.5);
+    margin-top :100px;
+}
+
+.h-txt a:hover {
+    background-color: #6343e0;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(79, 46, 209, 0.6);
+}
+
+/* Paginator (UPPER from button, same like 2nd image) */
+.slider-dots {
+    position: absolute;
+    top: 63%;              /* button se upar move kiya */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+}
+
+.dot {
+    height: 9px;
+    width: 9px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background-color: white;
+}
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .h-txt h1 {
+        font-size: 4em;
+    }
+    .h-txt .brand {
+        font-size: 2em;
+    }
+    .h-txt p {
+        font-size: 1.1em;
+        max-width: 500px;
+    }
+    .h-txt a {
+        padding: 16px 35px;
+        font-size: 1em;
+        margin-top: 80px;
+    }
+    .slider-dots {
+        top: 65%;
+    }
+    nav {
+        height: 80px;
+    }
+    .menu a {
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .h-txt h1 {
+        font-size: 3em;
+    }
+    .h-txt .brand {
+        font-size: 1.6em;
+    }
+    .h-txt p {
+        font-size: 1em;
+        max-width: 350px;
+    }
+    .h-txt a {
+        padding: 14px 28px;
+        font-size: 0.95em;
+        margin-top: 60px;
+    }
+    .slider-dots {
+        top: 67%;
+    }
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+    .menu a {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .h-txt h1 {
+        font-size: 2.2em;
+    }
+    .h-txt .brand {
+        font-size: 1.4em;
+    }
+    .h-txt p {
+        font-size: 0.95em;
+        max-width: 280px;
+    }
+    .h-txt a {
+        padding: 12px 22px;
+        font-size: 0.9em;
+        margin-top: 50px;
+    }
+    .slider-dots {
+        top: 70%;
+    }
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+    }
+    .menu a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}

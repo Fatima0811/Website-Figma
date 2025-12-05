@@ -1,0 +1,365 @@
+/*
+=====================================
+GLOBAL STYLES AND RESET
+=====================================
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+    color: white;
+}
+body{
+    background-color: black;
+}
+
+header {
+    min-height: 100vh;
+    padding: 80px 0;
+    background-image: linear-gradient(
+        rgba(47, 24, 147, 0.2),
+        rgba(102, 51, 153, 0.8)
+    ),
+    url('Mask (9).png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+/*
+=====================================
+HEADER CONTENT (Plans & Pricing)
+=====================================
+*/
+.Price-info {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.head {
+    width: 586px;
+    max-width: 100%;
+    height: auto;
+    opacity: 1;
+    margin: 0 auto;
+    text-align: center;
+
+
+}
+.heading {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 52px;
+    letter-spacing: -0.4px;
+    margin-bottom: 20px;
+
+}
+.heading1 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    opacity: 0.8;
+}
+
+/*
+=====================================
+PRICING GRID & CARDS
+=====================================
+*/
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    padding: 50px 0;
+}
+
+.card {
+    width: 400px;
+    /* height: 730px; */ /* remove this */
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+   -webkit-backdrop-filter: blur(1px); 
+    
+    /* Standard property hamesha sabse neeche rakhen */
+    backdrop-filter: blur(1px);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.card_title {
+
+font-weight: 500;
+font-size: 22px;
+line-height: 32px;
+letter-spacing: 0px;
+margin-bottom: 20px;
+
+}
+
+/* Price Section (9.99, $ and /mo) */
+
+
+.pricing {
+    margin-top: 60px;
+font-weight: 700;
+font-size: 58px;
+line-height: 70px;
+letter-spacing: -1px;
+text-align: center;
+}
+
+.dollar {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.2;
+    align-self: flex-start;
+    margin-top: 20px;
+}
+.price-section {
+    display: flex;
+    align-items: flex-start; /* price aur dollar ko top align karne ke liye */
+}
+
+.price-section .pricing {
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 70px;
+    margin: 0; /* remove extra margin */
+}
+
+.price-section .per-month {
+    font-size: 16px; /* smaller than price */
+    font-weight: 400;
+    opacity: 0.7;
+    position: relative;
+    top: 2px;  /* move above price */
+    left: 5px;  /* thoda left to align nicely */
+
+}
+
+
+/*
+=====================================
+FEATURES LIST (Using P tags)
+=====================================
+*/
+.features-list {
+    margin: 40px 0;
+    flex-grow: 1; 
+    padding-left: 0;
+}
+
+.features-list .feature {
+    padding: 10px 0;
+    font-size: 16px;
+    display: flex; 
+    align-items: center;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    
+    /* Text ko align karne ke liye yahan padding badha dein */
+    /* Agar aap icon ko bahar nikalna chahte hain toh: */
+    padding-left: 20px; 
+}
+
+/* Checked items mein icon ki styling */
+.features-list .feature.checked {
+    color: white;
+}
+
+/* Default icon: Dash sign (for unchecked items) */
+.features-list .feature::before {
+    color: rgba(255, 255, 255, 0.3); 
+    font-weight: bold;
+    /* margin-right: 10px; */ /* Isse hata dein ya 0 kar dein */
+    font-size: 16px;
+    
+    /* Icon ko left shift karne ke liye (text se bahar nikalne ke liye) */
+    margin-left: -20px; 
+    
+    /* Icon aur text ke darmiyan behtar faasle ke liye */
+    margin-right: 10px; 
+}
+
+/* Checked items ke liye checkmark */
+.features-list .feature.checked::before {
+    content: "✓"; 
+    color: #27D0A9; 
+}
+/* Checked items ke liye checkmark */
+.features-list .feature.checked::before {
+    content: "✓"; /* Unicode checkmark use kiya */
+    color: #27D0A9; /* Teal/Green color for checkmark */
+}
+
+
+/*
+=====================================
+CALL TO ACTION BUTTON
+=====================================
+*/
+.cta_btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 29px;
+    padding: 15px 0;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* subtle background for visibility */
+    border-color: rgba(255, 255, 255, 0.3);
+}
+/* Professional card button ka pink color */
+.card:nth-child(2) .cta_btn {
+    background-color: #E84F8C !important;
+    border-color: #E84F8C !important;
+}
+/* Team card button adjust for visibility */
+.card:nth-child(3) .cta_btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+/*
+=====================================
+MEDIA QUERIES (Responsive)
+=====================================
+*/
+@media only screen and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-bottom: 25%;
+    }
+    .container {
+        padding: 0 1rem;
+    }
+    .head {
+        width: 100%;
+    }
+    .pricing {
+        font-size: 72px;
+    }
+    .dollar {
+        font-size: 24px;
+        margin-top: 15px;
+    }
+}
+/* ========= MEDIA QUERIES (Responsive) ========= */
+
+/* Tablets / medium screens */
+@media only screen and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        width: 90%; /* Cards thoda chhote ho jayein */
+        padding: 40px;
+    }
+
+    .pricing {
+        font-size: 48px; /* Price thoda chhota */
+        line-height: 60px;
+    }
+
+    .dollar {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .per-month {
+        font-size: 14px;
+        top: 0;
+        left: 3px;
+    }
+}
+
+/* Mobile / small screens */
+@media only screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .head {
+        width: 100%;
+        text-align: center;
+    }
+
+    .heading {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .heading1 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .pricing {
+        font-size: 42px;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .dollar {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .per-month {
+        font-size: 12px;
+        top: 0;
+        left: 2px;
+    }
+
+    .card {
+        width: 95%;
+        padding: 30px;
+    }
+
+    .features-list .feature {
+        font-size: 14px;
+        padding-left: 15px;
+    }
+
+    .cta_btn {
+        font-size: 14px;
+        padding: 12px 0;
+    }
+}

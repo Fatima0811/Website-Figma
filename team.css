@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Fixed width/height removed */
+    background-color:black;
+    font-family: 'DM Sans', sans-serif;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+  
+header{
+     background-color: rgba(47, 24, 147, 1);
+     header {
+    min-height: 100vh; /* viewport ka 100% height */
+    width: 100%;       /* poora width cover kare */
+}
+}
+
+
+.content-wrapper { 
+    height: 992px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    padding: 100px 80px 0 80px;
+}
+
+
+
+
+/* Headings Container */
+
+.head {
+    /* FIX 1: Left aligned headings */
+    text-align: left;
+    max-width: 750px;
+    margin: 0 0 50px 0; /* Left aligned spacing */
+
+}
+
+
+
+/* Main Heading */
+
+.heading {
+
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 52px;
+    letter-spacing: -0.4px;
+    margin-bottom: 20px;
+
+}
+
+
+
+/* Sub-heading */
+
+.heading1 {
+
+    font-weight: 500;
+
+    font-size: 21px;
+
+    line-height: 32px;
+
+    margin-bottom: 50px;
+
+    opacity: 0.8;
+
+}
+
+/* ... (header, content-wrapper, head, heading, heading1 remains the same) ... */
+
+/* ********** TEAM GRID ********** */
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; 
+    max-width: 900px; 
+    margin: 0; 
+}
+
+/* Team Member Card */
+.card {
+    text-align: left; 
+    padding: 20px 0;
+
+
+}
+.card h5 {
+font-weight: 500;
+font-size: 22px;
+line-height: 32px;
+letter-spacing: 0px;
+
+    /* FIX 1: h5 (Name) ke neeche thoda fasla shamil kiya */
+    margin: 10px 0 10px 0; /* Top (5px), Right (0), Bottom (2px), Left (0) */
+}
+
+.card p {
+
+font-weight: 400;
+font-size: 16px;
+
+line-height: 26px;
+letter-spacing: 0px;
+    opacity: 0.8;
+    /* FIX 2: p (Designation) ke neeche fasla shamil kiya */
+    margin: 0 0 10px 0; /* Top (0), Right (0), Bottom (10px), Left (0) */
+}
+
+
+/* ... (image, h5, p styles remain the same) ... */
+
+/* ********** SOCIAL ICONS STYLING ********** */
+.socials {
+    /* FIX 4: Icon container ki styling */
+    margin-top: 15px; /* Text aur icons ke beech fasla */
+    display: flex; /* Icons ko ek line mein laane ke liye */
+    gap: 15px; /* Icons ke beech fasla */
+    justify-content: flex-start; /* Left align kiya */
+    width: 154px;
+height: 38px;
+top: 552.2px;
+left: 115px;
+opacity: 1;
+
+
+}
+
+.social-icon {
+    /* FIX 5: Icon Image ka size set kiya */
+    width: 18px; 
+    height: 18px;
+    
+    /* Halke rang ke liye opacity */
+    transition: opacity 0.3s;
+    margin-right: 15px;
+
+top: 552.2px;
+left: 253px;
+opacity: 1;
+
+}
+
+/* ********** LAST ROW ALIGNMENT FIX ********** */
+@media (min-width: 768px) {
+    .card:nth-child(5) {
+        grid-column: 2 / 3; 
+    }
+}
+/* ------------------- Responsive Media Queries ------------------- */
+
+/* Tablets / medium screens */
+@media (max-width: 992px) {
+    .content-wrapper {
+        padding: 50px 20px;
+        height: auto; /* adaptive height */
+    }
+
+    .showcase-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
+        gap: 30px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .card h5 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .card p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .socials {
+        width: 120px;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .social-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+    }
+}
+
+/* Mobile / small screens */
+@media (max-width: 480px) {
+    .showcase-grid {
+        grid-template-columns: 1fr; /* single column */
+        gap: 20px;
+    }
+
+    .card h5 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .card p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .socials {
+        width: 100px;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .social-icon {
+        width: 14px;
+        height: 14px;
+        margin-right: 8px;
+    }
+}

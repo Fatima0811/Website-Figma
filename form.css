@@ -1,0 +1,203 @@
+/* ********** GLOBAL FIX: Font Family ********** */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+    color: white;
+}
+body{
+    background-color: black;
+}
+
+header {
+    min-height: 100vh; /* Puri height */
+    width: 100%;
+    /* padding: 80px 0; /* Agar content ko ooper se neechay tak spread karna hai tu yahan padding rakho, warna 0 kar do */
+    
+    /* Flexbox settings: Content-wrapper ko center karne ke liye */
+    display: flex;
+    justify-content: center; /* Content ko horizontally center karega */
+    align-items: center; /* Content ko vertically center karega */
+
+    /* ... baqi background styles same rahen gy ... */
+    background-image: linear-gradient(
+        rgba(47, 24, 147, 1),
+        rgba(102, 51, 153, 0.2)
+    ),
+    url('Background.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.content-wrapper{
+    /* height: 770px; /* REMOVED: Is height ko hata diya taake height adaptive ho */
+    width: 100%; 
+    max-width: 1100px; /* Content ki max width set ki */
+    padding: 0 40px; /* Side padding */
+    margin: 0 auto; /* Header ke andar center mein laye */
+    
+    /* Flexbox settings: Text aur Form ko side-by-side karne ke liye */
+    display: flex;
+    justify-content: space-between; /* Text aur Form ke darmiyan kafi fasla rakha */
+    align-items: center; /* Dono ko vertically center mein rakha */
+}
+
+/* ********** LEFT TEXT ********** */
+.h-txt {
+    .h-txt {
+    /* position: absolute; top: 50%; left: 18%; transform: translateY(-50%); /* REMOVED */
+    
+    text-align: left;
+    max-width: 450px; /* Thoda zyada width di */
+    /* Ab iski position .content-wrapper ka Flexbox handle karega */
+}
+}
+
+.h-txt h3 {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 52px;
+    letter-spacing: -0.4px;
+}
+
+.h-txt p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+/* ********** FORM BOX ********** */
+.form {
+    width: 400px;
+    height: auto;
+    /* position: absolute; top: 50%; right: 20%; transform: translateY(-50%); /* REMOVED */
+    
+    background: white;
+    border-radius: 15px;
+    color: black;
+    padding: 30px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    /* Ab iski position bhi .content-wrapper ka Flexbox handle karega */
+}
+/* ********** FORM TABS ********** */
+.form-tabs {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(21, 20, 57, 0.1);
+    margin-bottom: 20px;
+}
+
+.form-title,
+.form-title1 {
+    display: block;
+    padding-bottom: 15px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    width: 50%;
+    text-align: center;
+}
+
+/* Active Tab */
+.form-title {
+    color: rgba(30, 14, 98, 1);
+    border-bottom: 2px solid rgba(30, 14, 98, 1);
+}
+
+/* Inactive Tab */
+.form-title1 {
+    color: rgba(21, 20, 57, 0.4);
+    border-bottom: 2px solid transparent;
+}
+
+/* ********** INPUT FIELDS ********** */
+.form form {
+    margin-top: 30px;
+}
+
+.form input[type="email"],
+.form input[type="password"] {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    border: 1px solid rgba(21, 20, 57, 0.1);
+    border-radius: 15px;
+    font-size: 16px;
+    color: black;
+}
+
+/* ********** BUTTONS ********** */
+.form button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase; /* FIX: 'case:' was wrong CSS, replaced with correct one */
+}
+
+/* Create Account Button */
+.btn {
+    background-color: rgba(37, 218, 197, 1);
+    color: white;
+    margin-top: 30px;
+}
+
+/* ********** OR DIVIDER ********** */
+.or-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 15px 0;
+    color: rgba(20, 20, 20, 0.1);
+    font-size: 14px;
+}
+
+.or-divider::before,
+.or-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.1);
+}
+
+.or-divider:not(:empty)::before {
+    margin-right: .5em;
+}
+
+.or-divider:not(:empty)::after {
+    margin-left: .5em;
+}
+
+/* Twitter Button */
+.btn1 {
+    background-color: rgba(29, 161, 242, 1);
+    color: white;
+    margin-top: 10px;
+}
+@media (max-width: 992px) {
+    .content-wrapper {
+        flex-direction: column; /* Mobile par content ko vertical stack kiya */
+        padding-top: 50px;
+        padding-bottom: 50px;
+        min-height: 100vh;
+        gap: 50px; /* Text aur form ke beech fasla */
+    }
+    .h-txt {
+        text-align: center; /* Mobile par text ko center kiya */
+        max-width: 100%;
+    }
+    .form {
+        width: 100%;
+        max-width: 400px; /* Form ki max width maintain ki */
+    }
+}
+ان تبدیلیوں کا مطلب:
